@@ -20,5 +20,29 @@ exports[`renders without crashing 1`] = `
     </code>
      and save to reload.
   </p>
+  <div
+    className="wrap"
+  >
+    <input
+      className="input"
+      disabled={false}
+      id={undefined}
+      maxLength={9999}
+      name="input field name is"
+      onChange={[Function]}
+      onKeyPress={undefined}
+      placeholder="Enter your name"
+      type="text"
+      value={undefined}
+    />
+  </div>
+  <button
+    className="btn large"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Button Exist HERE
+  </button>
 </div>
 `;

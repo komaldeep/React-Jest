@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="wrap"
+>
+  <input
+    className="input"
+    disabled={false}
+    id={undefined}
+    maxLength={9999}
+    name={undefined}
+    onChange={[Function]}
+    onKeyPress={undefined}
+    placeholder=""
+    type="text"
+    value={undefined}
+  />
+</div>
+`;

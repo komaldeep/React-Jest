@@ -18,25 +18,26 @@ export const buttonSkins = {
 
 export default class Buuton extends Component {
 
-  // static displayName = 'atoms/Button/Buuton.js';
-  //
-  // static propTypes = {
-  //   size: PropTypes.string,
-  //   skin: PropTypes.string,
-  //   disabled: PropTypes.bool,
-  //   onClick: PropTypes.func,
-  //   children: PropTypes.node,
-  //   block: PropTypes.bool,
-  //   type: PropTypes.oneOf(['button', 'submit']),
-  // };
-  //
-  // static defaultProps = {
-  //   skin: buttonSkins.PRIMARY,
-  //   size: buttonSizes.MD,
-  //   onClick: () => {},
-  //   disabled: false,
-  //   block: false,
-  // };
+  static displayName = 'atoms/Button/Buuton.js';
+
+  static propTypes = {
+    size: PropTypes.string,
+    skin: PropTypes.string,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+    children: PropTypes.node,
+    block: PropTypes.bool,
+    type: PropTypes.oneOf(['button', 'submit']),
+  };
+
+  static defaultProps = {
+    skin: buttonSkins.PRIMARY,
+    size: buttonSizes.MD,
+    onClick: () => {},
+    disabled: false,
+    block: false,
+    type: 'button'
+  };
 
 
   handleClick = () => {

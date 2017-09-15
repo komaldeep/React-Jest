@@ -5,31 +5,31 @@ import './InputText.css';
 
 export default class InputText extends Component {
 
-  // static displayName = 'atoms/InputText';
-  //
-  // static propTypes = {
-  //   value: PropTypes.string,
-  //   updateValue: PropTypes.string,
-  //   name: PropTypes.string,
-  //   id: PropTypes.string,
-  //   type: PropTypes.string,
-  //   placeholder: PropTypes.string,
-  //   handleChange: PropTypes.func,
-  //   onKeyPress: PropTypes.func,
-  //   maxLength: PropTypes.number,
-  //   disableDeleteButton: PropTypes.bool,
-  // };
-  //
-  // static defaultProps = {
-  //   type: 'text',
-  //   placeholder: '',
-  //   disabled: false,
-  //   showSuccess: false,
-  //   showError: false,
-  //   pending: false,
-  //   focus: false,
-  //   maxLength: 9999,
-  // };
+  static displayName = 'atoms/InputText';
+
+  static propTypes = {
+    value: PropTypes.string,
+    updateValue: PropTypes.string,
+    name: PropTypes.string,
+    id: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    handleChange: PropTypes.func,
+    onKeyPress: PropTypes.func,
+    maxLength: PropTypes.number,
+    disableDeleteButton: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    type: 'text',
+    placeholder: '',
+    disabled: false,
+    showSuccess: false,
+    showError: false,
+    pending: false,
+    focus: false,
+    maxLength: 9999,
+  };
 
   constructor(props) {
     super(props);
