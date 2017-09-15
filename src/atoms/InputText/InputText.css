@@ -1,0 +1,45 @@
+.wrap {
+  position: relative;
+}
+
+.input {
+  height: 2.1rem;
+  padding: .45rem 2.5rem .4rem .8rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.hasDanger {
+  padding-right: .8rem;
+}
+
+.disabled {
+
+}
+
+.pending {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.reset {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: .8rem;
+  height: 100%;
+  padding-right: 1.75rem;
+  padding-left: .75rem;
+  border: none;
+  outline: none;
+  background: transparent;
+}

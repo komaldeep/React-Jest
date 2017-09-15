@@ -1,0 +1,34 @@
+
+.btn {
+  display: inline-block;
+  max-width: 100%; // IE11 overflow fix*/
+  padding: 0;
+  border: 0;
+  border-style: none;
+  border-radius: .15rem; // .15rem*/
+  outline: none;
+  //background: transparent;
+  text-decoration: none;
+  letter-spacing: .75rem; // .75rem*/
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 250ms, color 250ms, border-color 250ms;
+  background-color: red;
+}
+
+.large {
+  width: 300px;
+}
+
+.block {
+  width: 100%;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+
