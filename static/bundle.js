@@ -22710,27 +22710,6 @@
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  // static displayName = 'atoms/Button/Buuton.js';
-	  //
-	  // static propTypes = {
-	  //   size: PropTypes.string,
-	  //   skin: PropTypes.string,
-	  //   disabled: PropTypes.bool,
-	  //   onClick: PropTypes.func,
-	  //   children: PropTypes.node,
-	  //   block: PropTypes.bool,
-	  //   type: PropTypes.oneOf(['button', 'submit']),
-	  // };
-	  //
-	  // static defaultProps = {
-	  //   skin: buttonSkins.PRIMARY,
-	  //   size: buttonSizes.MD,
-	  //   onClick: () => {},
-	  //   disabled: false,
-	  //   block: false,
-	  // };
-
-
 	  _createClass(Buuton, [{
 	    key: 'render',
 	    value: function render() {
@@ -22754,6 +22733,24 @@
 	  return Buuton;
 	}(_react.Component);
 
+	Buuton.displayName = 'atoms/Button/Buuton.js';
+	Buuton.propTypes = {
+	  size: _propTypes2.default.string,
+	  skin: _propTypes2.default.string,
+	  disabled: _propTypes2.default.bool,
+	  onClick: _propTypes2.default.func,
+	  children: _propTypes2.default.node,
+	  block: _propTypes2.default.bool,
+	  type: _propTypes2.default.oneOf(['button', 'submit'])
+	};
+	Buuton.defaultProps = {
+	  skin: buttonSkins.PRIMARY,
+	  size: buttonSizes.MD,
+	  onClick: function onClick() {},
+	  disabled: false,
+	  block: false,
+	  type: 'button'
+	};
 	exports.default = Buuton;
 
 /***/ }),
@@ -22993,32 +22990,6 @@
 	var InputText = function (_Component) {
 	  _inherits(InputText, _Component);
 
-	  // static displayName = 'atoms/InputText';
-	  //
-	  // static propTypes = {
-	  //   value: PropTypes.string,
-	  //   updateValue: PropTypes.string,
-	  //   name: PropTypes.string,
-	  //   id: PropTypes.string,
-	  //   type: PropTypes.string,
-	  //   placeholder: PropTypes.string,
-	  //   handleChange: PropTypes.func,
-	  //   onKeyPress: PropTypes.func,
-	  //   maxLength: PropTypes.number,
-	  //   disableDeleteButton: PropTypes.bool,
-	  // };
-	  //
-	  // static defaultProps = {
-	  //   type: 'text',
-	  //   placeholder: '',
-	  //   disabled: false,
-	  //   showSuccess: false,
-	  //   showError: false,
-	  //   pending: false,
-	  //   focus: false,
-	  //   maxLength: 9999,
-	  // };
-
 	  function InputText(props) {
 	    _classCallCheck(this, InputText);
 
@@ -23078,6 +23049,29 @@
 	  return InputText;
 	}(_react.Component);
 
+	InputText.displayName = 'atoms/InputText';
+	InputText.propTypes = {
+	  value: _propTypes2.default.string,
+	  updateValue: _propTypes2.default.string,
+	  name: _propTypes2.default.string,
+	  id: _propTypes2.default.string,
+	  type: _propTypes2.default.string,
+	  placeholder: _propTypes2.default.string,
+	  handleChange: _propTypes2.default.func,
+	  onKeyPress: _propTypes2.default.func,
+	  maxLength: _propTypes2.default.number,
+	  disableDeleteButton: _propTypes2.default.bool
+	};
+	InputText.defaultProps = {
+	  type: 'text',
+	  placeholder: '',
+	  disabled: false,
+	  showSuccess: false,
+	  showError: false,
+	  pending: false,
+	  focus: false,
+	  maxLength: 9999
+	};
 	exports.default = InputText;
 
 /***/ }),
