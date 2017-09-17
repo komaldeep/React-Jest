@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
+    "test": "jest --watch --coverage",
     "test:update":"jest --updateSnapshot",
     "eject": "react-scripts eject",
     "webpack": "webpack",

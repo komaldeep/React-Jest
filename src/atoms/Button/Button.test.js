@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import toJson from 'enzyme-to-json';
 import ReactTestUtils from 'react-dom/test-utils';
 
@@ -25,19 +25,12 @@ test('giving specifioc props to button', () => {
 });
 
 test('on click of button', () => {
-  // const button = shallow(
-  //   <Buuton  size={buttonSizes.LG}
-  //            skin={buttonSkins.PRIMARY}
-  //            onClick={handleClick}
-  //   >
-  //     Ok!
-  //   </Buuton>
-  // );
-  const btns = TestUtils.scryRenderedDOMComponentsWithTag(rendered, 'button');
-  button.find('button').simulate('click');
-  const forksButton = btns[1];
-  TestUtils.Simulate.click(forksButton);
-  // expect(rendered.state.mode).toEqual('forks');
-  const tree = toJson(component);
-  expect(tree).toMatchSnapshot();
+  const component = mount(<Buuton
+    size={buttonSizes.LG}
+    skin={buttonSkins.PRIMARY}>
+    onclick button
+  </Buuton>)
+  const button = component.find('button');
+  button.simulate('click');
+  expect(component.state().counter).toEqual(1);
 })

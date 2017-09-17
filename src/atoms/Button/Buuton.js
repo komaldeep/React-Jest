@@ -39,8 +39,18 @@ export default class Buuton extends Component {
     type: 'button'
   };
 
+  constructor (props) {
+    super(props)
+    this.state = {
+      counter:0
+    }
+  }
+
 
   handleClick = () => {
+    this.setState({
+      counter:1
+    })
     console.log('ókay click comes here');
   };
 
