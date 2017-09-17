@@ -2,8 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme'
 import toJson from 'enzyme-to-json';
-import ReactTestUtils from 'react-dom/test-utils';
-
 import Buuton, { buttonSkins, buttonSizes } from './Buuton';
 
 test('renders without crashing', () => {
@@ -26,11 +24,23 @@ test('giving specifioc props to button', () => {
 
 test('on click of button', () => {
   const component = mount(<Buuton
-    size={buttonSizes.LG}
-    skin={buttonSkins.PRIMARY}>
-    onclick button
+    size={buttonSizes.SM}
+    skin={buttonSkins.SECONDARY}>
+     button with different features
   </Buuton>)
   const button = component.find('button');
   button.simulate('click');
   expect(component.state().counter).toEqual(1);
+})
+
+it('should render a right size and skin', () => {
+  const wrapper = mount(
+    <Buuton
+      size={buttonSizes.SM}
+      skin={buttonSkins.SECONDARY}>
+      button with different features
+    </Buuton>
+  );
+  expect(wrapper.prop('size')).toEqual('sm');
+  expect(wrapper.prop('skin')).toEqual('secondary');
 })

@@ -24,9 +24,9 @@
 }
 
 .pending {
-  &:focus {
-    box-shadow: none;
-  }
+  /*focus {*/
+    /*box-shadow: none;*/
+  /*}*/
 }
 
 .reset {

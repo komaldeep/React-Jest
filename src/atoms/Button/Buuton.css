@@ -20,6 +20,10 @@
   width: 300px;
 }
 
+.small {
+  width: 100px;
+}
+
 .block {
   width: 100%;
 }

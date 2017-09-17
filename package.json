@@ -14,13 +14,12 @@
     "react-scripts": "1.0.13"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "webpack-dev-server --watch --output-public-path=/static/",
     "build": "react-scripts build",
     "test": "jest --watch --coverage",
     "test:update":"jest --updateSnapshot",
     "eject": "react-scripts eject",
-    "webpack": "webpack",
-    "start:webpack": "webpack-dev-server --output-public-path=/static/"
+    "webpack": "webpack"
   },
   "devDependencies": {
     "babel-jest": "^21.0.2",

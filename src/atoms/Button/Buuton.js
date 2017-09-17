@@ -46,17 +46,13 @@ export default class Buuton extends Component {
     }
   }
 
-
   handleClick = () => {
     this.setState({
       counter:1
     })
-    console.log('ókay click comes here');
   };
 
-
   render() {
-
     return (
       <button
         onClick={ this.handleClick }
@@ -64,6 +60,7 @@ export default class Buuton extends Component {
           classNames({
             btn: true,
             large: this.props.size === 'lg',
+            small: this.props.size === 'sm'
           })
         }
         disabled={ this.props.disabled }
