@@ -21,6 +21,27 @@ test('inputfield with different feature', () => {
       pending= {false}
       focus= {false}
   />);
-  const tree = toJson(rendered)
+  const tree = toJson(rendered);
   expect(tree).toMatchSnapshot();
+});
+
+test('inputfield onchange event', () => {
+
+  const wrapper = mount(
+    <InputText
+      type="text"
+      name="name"
+    />
+  );
+
+  const tree = toJson(wrapper)
+  // wrapper.prop().inputValue = jest.fn();
+
+  wrapper.find('input').simulate('change', { target: {
+    value: 'Change function' },
+  });
+
+  expect(wrapper.state().value).toEqual('Change function');
+  expect(wrapper.prop().inputValue).toBeCalled();
+  // expect(toJson(wrapper)).toMatchSnapshot();
 });

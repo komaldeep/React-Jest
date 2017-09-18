@@ -5,6 +5,20 @@ import InputText from './atoms/InputText/InputText';
 import './App.css';
 
 class App extends Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      inputField:'',
+    }
+  }
+
+  inputFieldValue=(value)=>{
+    this.setState({
+      inputField: value
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,6 +33,7 @@ class App extends Component {
           name="input field name is"
           type="text"
           placeholder="Enter your name"
+          inputValue={this.inputFieldValue}
         />
 
         <Button

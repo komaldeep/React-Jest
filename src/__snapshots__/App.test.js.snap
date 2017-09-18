@@ -30,7 +30,6 @@ exports[`renders without crashing 1`] = `
       maxLength={9999}
       name="input field name is"
       onChange={[Function]}
-      onKeyPress={undefined}
       placeholder="Enter your name"
       type="text"
       value={undefined}

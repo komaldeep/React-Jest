@@ -18,6 +18,7 @@ export default class InputText extends Component {
     onKeyPress: PropTypes.func,
     maxLength: PropTypes.number,
     disableDeleteButton: PropTypes.bool,
+    inputValue: PropTypes.func,
   };
 
   static defaultProps = {
@@ -33,14 +34,16 @@ export default class InputText extends Component {
 
   constructor(props) {
     super(props);
-    this.keepFocus = false;
     this.state = {
       value: props.value,
     };
   }
 
-  handleOnChangeValue = () => {
-
+  handleOnChangeValue = (event) => {
+    this.setState({
+      value: event.target.value
+    });
+    this.props.inputValue(event.target.value);
   }
 
   render() {
@@ -52,7 +55,6 @@ export default class InputText extends Component {
       id,
       showError,
       showSuccess,
-      onKeyPress,
       maxLength,
       disableDeleteButton,
     } = this.props;
@@ -68,11 +70,10 @@ export default class InputText extends Component {
           ref={(input) => { this.inputField = input; }}
           className={
             classNames({
-              input: true,
+              input: true
             })
           }
           disabled={disabled}
-          onKeyPress={onKeyPress}
           maxLength={maxLength}
           onChange={this.handleOnChangeValue}
         />
