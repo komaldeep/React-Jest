@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer';
 import InputText from './InputText';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import TestUtils from 'react-addons-test-utils';
 
 test('renders without crashing', () => {
   const rendered = renderer.create(<InputText />).toJSON();
   expect(rendered).toMatchSnapshot();
 });
-
 
 test('inputfield with different feature', () => {
   const rendered = shallow(
@@ -26,10 +26,12 @@ test('inputfield with different feature', () => {
 });
 
 test('inputfield onchange event', () => {
-  const wrapper = mount(
+  const wrapper = shallow(
     <InputText
       type="text"
       name="name"
+      onChange={() => {}}
+      inputValue={() => {}}
     />
   );
   wrapper.find('input').simulate('change', { target: {

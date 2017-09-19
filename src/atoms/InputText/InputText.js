@@ -39,15 +39,11 @@ export default class InputText extends Component {
     };
   }
 
-  passValue(value){
-    this.props.inputValue(value);
-  }
-
   handleOnChangeValue = (event) => {
     this.setState({
       value: event.target.value
     });
-    this.passValue(event.target.value);
+    this.props.inputValue(event.target.value);
   }
 
   render() {
