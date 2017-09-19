@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import InputText from './InputText';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import TestUtils from 'react-addons-test-utils';
 
 test('renders without crashing', () => {
   const rendered = renderer.create(<InputText />).toJSON();

@@ -25,7 +25,8 @@ test('giving specifioc props to button', () => {
 test('on click of button', () => {
   const component = mount(<Buuton
     size={buttonSizes.SM}
-    skin={buttonSkins.SECONDARY}>
+    skin={buttonSkins.SECONDARY}
+    onClick={()=> {}}>
      button with different features
   </Buuton>)
   const button = component.find('button');
