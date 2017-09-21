@@ -24,6 +24,21 @@ test('inputfield with different feature', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('should render a right type and text', () => {
+  const wrapper = mount(
+    <InputText
+      type= 'text'
+      placeholder="placeholder for input text"
+      disabled= {false}
+      showSuccess= {false}
+      showError= {false}
+      pending= {false}
+      focus= {false}
+    />);
+  expect(wrapper.prop('type')).toEqual('text');
+  expect(wrapper.prop('placeholder')).toEqual('placeholder for input text');
+});
+
 test('inputfield onchange event', () => {
   const wrapper = shallow(
     <InputText

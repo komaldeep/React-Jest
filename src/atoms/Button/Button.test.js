@@ -32,9 +32,9 @@ test('on click of button', () => {
   const button = component.find('button');
   button.simulate('click');
   expect(component.state().counter).toEqual(1);
-})
+});
 
-it('should render a right size and skin', () => {
+test('should render a right size and skin', () => {
   const wrapper = mount(
     <Buuton
       size={buttonSizes.SM}
@@ -44,4 +44,4 @@ it('should render a right size and skin', () => {
   );
   expect(wrapper.prop('size')).toEqual('sm');
   expect(wrapper.prop('skin')).toEqual('secondary');
-})
+});
