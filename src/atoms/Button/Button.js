@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './Buuton.css';
+import './Button.css';
 
 export const buttonSizes = {
   LG: 'lg',
@@ -16,9 +16,9 @@ export const buttonSkins = {
   SECONDARY: 'secondary',
 };
 
-export default class Buuton extends Component {
+export default class Button extends Component {
 
-  static displayName = 'atoms/Button/Buuton.js';
+  static displayName = 'atoms/Button';
 
   static propTypes = {
     size: PropTypes.string,
@@ -28,6 +28,7 @@ export default class Buuton extends Component {
     children: PropTypes.node,
     block: PropTypes.bool,
     type: PropTypes.oneOf(['button', 'submit']),
+    buttonClicked: PropTypes.func,
   };
 
   static defaultProps = {
@@ -47,24 +48,32 @@ export default class Buuton extends Component {
   }
 
   handleClick = () => {
-    this.setState({
-      counter:1
-    })
+    this.props.buttonClicked();
   };
 
   render() {
+    const { size,
+            skin,
+            disabled,
+            type
+          } = this.props;
+
     return (
       <button
         onClick={ this.handleClick }
         className={
           classNames({
             btn: true,
-            large: this.props.size === 'lg',
-            small: this.props.size === 'sm'
+            large: size === 'lg',
+            medium: size === 'md',
+            small: size === 'sm',
+            extraSmall: size === 'xs',
+            primary: skin === 'primary',
+            secondary: skin === 'secondary'
           })
         }
-        disabled={ this.props.disabled }
-        type={this.props.type}
+        disabled={disabled}
+        type={type}
       >
         { this.props.children }
       </button>

@@ -37,6 +37,11 @@ test('should render a right type and text', () => {
     />);
   expect(wrapper.prop('type')).toEqual('text');
   expect(wrapper.prop('placeholder')).toEqual('placeholder for input text');
+  expect(wrapper.prop('disabled')).toEqual(false);
+  expect(wrapper.prop('showSuccess')).toEqual(false);
+  expect(wrapper.prop('showError')).toEqual(false);
+  expect(wrapper.prop('pending')).toEqual(false);
+  expect(wrapper.prop('focus')).toEqual(false);
 });
 
 test('inputfield onchange event', () => {

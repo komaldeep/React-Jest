@@ -2,7 +2,7 @@
 
 exports[`giving specifioc props to button 1`] = `
 <button
-  className="btn large"
+  className="btn large primary"
   disabled={false}
   onClick={[Function]}
   type="button"
@@ -13,7 +13,7 @@ exports[`giving specifioc props to button 1`] = `
 
 exports[`renders without crashing 1`] = `
 <button
-  className="btn"
+  className="btn medium primary"
   disabled={false}
   onClick={[Function]}
   type="button"

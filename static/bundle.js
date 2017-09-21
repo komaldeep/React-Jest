@@ -69,7 +69,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('reactEntry'));
 
 /***/ }),
 /* 2 */
@@ -22563,9 +22563,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Buuton = __webpack_require__(190);
+	var _Button = __webpack_require__(190);
 
-	var _Buuton2 = _interopRequireDefault(_Buuton);
+	var _Button2 = _interopRequireDefault(_Button);
 
 	var _InputText = __webpack_require__(196);
 
@@ -22584,10 +22584,21 @@
 	var App = function (_Component) {
 	  _inherits(App, _Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+	    _this.inputFieldValue = function (value) {
+	      _this.setState({
+	        inputField: value
+	      });
+	    };
+
+	    _this.state = {
+	      inputField: ''
+	    };
+	    return _this;
 	  }
 
 	  _createClass(App, [{
@@ -22619,13 +22630,14 @@
 	        _react2.default.createElement(_InputText2.default, {
 	          name: 'input field name is',
 	          type: 'text',
-	          placeholder: 'Enter your name'
+	          placeholder: 'Enter your name',
+	          inputValue: this.inputFieldValue
 	        }),
 	        _react2.default.createElement(
-	          _Buuton2.default,
+	          _Button2.default,
 	          {
-	            size: _Buuton.buttonSizes.LG,
-	            skin: _Buuton.buttonSkins.PRIMARY,
+	            size: _Button.buttonSizes.LG,
+	            skin: _Button.buttonSkins.PRIMARY,
 	            onClick: this.props.onClick
 	          },
 	          'Button Exist HERE'
@@ -22698,7 +22710,6 @@
 	      _this.setState({
 	        counter: 1
 	      });
-	      console.log('ókay click comes here');
 	    };
 
 	    _this.state = {
@@ -22710,14 +22721,14 @@
 	  _createClass(Buuton, [{
 	    key: 'render',
 	    value: function render() {
-
 	      return _react2.default.createElement(
 	        'button',
 	        {
 	          onClick: this.handleClick,
 	          className: (0, _classnames2.default)({
 	            btn: true,
-	            large: this.props.size === 'lg'
+	            large: this.props.size === 'lg',
+	            small: this.props.size === 'sm'
 	          }),
 	          disabled: this.props.disabled,
 	          type: this.props.type
@@ -22730,7 +22741,7 @@
 	  return Buuton;
 	}(_react.Component);
 
-	Buuton.displayName = 'atoms/Button/Buuton.js';
+	Buuton.displayName = 'atoms/Button';
 	Buuton.propTypes = {
 	  size: _propTypes2.default.string,
 	  skin: _propTypes2.default.string,
@@ -22924,8 +22935,8 @@
 	if (false) {
 		// When the styles change, update the <style> tags
 		if (!content.locals) {
-			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Buuton.css", function () {
-				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Buuton.css");
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Button.css", function () {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Button.css");
 				if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -22945,7 +22956,7 @@
 
 
 	// module
-	exports.push([module.id, ".btn {\n  display: inline-block;\n  max-width: 100%;\n  padding: 0;\n  border: 0;\n  border-style: none;\n  border-radius: .15rem;\n  outline: none;\n  text-decoration: none;\n  letter-spacing: .75rem;\n  cursor: pointer;\n  user-select: none;\n  transition: background-color 250ms, color 250ms, border-color 250ms;\n  background-color: red; }\n\n.large {\n  width: 300px; }\n\n.block {\n  width: 100%; }\n\n.flexContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n  pointer-events: none; }\n", ""]);
+	exports.push([module.id, ".btn {\n  display: inline-block;\n  max-width: 100%;\n  padding: 0;\n  border: 0;\n  border-style: none;\n  border-radius: .15rem;\n  outline: none;\n  text-decoration: none;\n  letter-spacing: .75rem;\n  cursor: pointer;\n  user-select: none;\n  transition: background-color 250ms, color 250ms, border-color 250ms;\n  background-color: red; }\n\n.large {\n  width: 300px; }\n\n.small {\n  width: 100px; }\n\n.block {\n  width: 100%; }\n\n.flexContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n  pointer-events: none; }\n", ""]);
 
 	// exports
 
@@ -22992,9 +23003,13 @@
 
 	    var _this = _possibleConstructorReturn(this, (InputText.__proto__ || Object.getPrototypeOf(InputText)).call(this, props));
 
-	    _this.handleOnChangeValue = function () {};
+	    _this.handleOnChangeValue = function (event) {
+	      _this.setState({
+	        value: event.target.value
+	      });
+	      _this.props.inputValue(event.target.value);
+	    };
 
-	    _this.keepFocus = false;
 	    _this.state = {
 	      value: props.value
 	    };
@@ -23014,7 +23029,6 @@
 	          id = _props.id,
 	          showError = _props.showError,
 	          showSuccess = _props.showSuccess,
-	          onKeyPress = _props.onKeyPress,
 	          maxLength = _props.maxLength,
 	          disableDeleteButton = _props.disableDeleteButton;
 
@@ -23035,7 +23049,6 @@
 	            input: true
 	          }),
 	          disabled: disabled,
-	          onKeyPress: onKeyPress,
 	          maxLength: maxLength,
 	          onChange: this.handleOnChangeValue
 	        })
@@ -23057,7 +23070,8 @@
 	  handleChange: _propTypes2.default.func,
 	  onKeyPress: _propTypes2.default.func,
 	  maxLength: _propTypes2.default.number,
-	  disableDeleteButton: _propTypes2.default.bool
+	  disableDeleteButton: _propTypes2.default.bool,
+	  inputValue: _propTypes2.default.func
 	};
 	InputText.defaultProps = {
 	  type: 'text',
@@ -23110,7 +23124,7 @@
 
 
 	// module
-	exports.push([module.id, ".wrap {\n  position: relative; }\n\n.input {\n  height: 2.1rem;\n  padding: .45rem 2.5rem .4rem .8rem;\n  margin-bottom: 1.5rem;\n  margin-top: 1.5rem; }\n\n::-ms-clear {\n  display: none;\n  width: 0;\n  height: 0; }\n\n.hasDanger {\n  padding-right: .8rem; }\n\n.pending:focus {\n  box-shadow: none; }\n\n.reset {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 10;\n  width: .8rem;\n  height: 100%;\n  padding-right: 1.75rem;\n  padding-left: .75rem;\n  border: none;\n  outline: none;\n  background: transparent; }\n", ""]);
+	exports.push([module.id, ".wrap {\n  position: relative; }\n\n.input {\n  height: 2.1rem;\n  padding: .45rem 2.5rem .4rem .8rem;\n  margin-bottom: 1.5rem;\n  margin-top: 1.5rem; }\n\n::-ms-clear {\n  display: none;\n  width: 0;\n  height: 0; }\n\n.hasDanger {\n  padding-right: .8rem; }\n\n.pending {\n  /*focus {*/\n  /*box-shadow: none;*/\n  /*}*/ }\n\n.reset {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 10;\n  width: .8rem;\n  height: 100%;\n  padding-right: 1.75rem;\n  padding-left: .75rem;\n  border: none;\n  outline: none;\n  background: transparent; }\n", ""]);
 
 	// exports
 

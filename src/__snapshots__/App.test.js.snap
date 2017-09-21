@@ -36,12 +36,22 @@ exports[`renders without crashing 1`] = `
     />
   </div>
   <button
-    className="btn large"
+    className="btn large primary"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     Button Exist HERE
   </button>
+  <div>
+    <button
+      className="btn small secondary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
 </div>
 `;

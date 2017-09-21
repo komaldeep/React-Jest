@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
   entry: [
     "./src/index.js"
@@ -24,6 +25,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
+    root: [
+      path.resolve('./src')
+    ],
   },
   devServer: {
     historyApiFallback: true,

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-import Button, {buttonSizes , buttonSkins}  from './atoms/Button/Buuton.js';
+import Button, {buttonSizes , buttonSkins}  from './atoms/Button/Button.js';
 import InputText from './atoms/InputText/InputText';
 import './App.css';
+
+import WrapperLogin from './molecules/WrapperLogin/WrapperLogin'
 
 class App extends Component {
 
@@ -43,6 +45,8 @@ class App extends Component {
         >
           Button Exist HERE
         </Button>
+
+        <WrapperLogin />
       </div>
     );
   }
