@@ -15,37 +15,19 @@ class App extends Component {
     }
   }
 
-  inputFieldValue=(value)=>{
-    this.setState({
-      inputField: value
-    })
-  }
+  // inputFieldValue=(value)=>{
+  //   this.setState({
+  //     inputField: value
+  //   })
+  // }
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div>
+        <div className="App-header App">
           <h2>Welcome to React</h2>
+          <h3>Best Practise for writing react components (Atomic design)</h3>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <InputText
-          name="input field name is"
-          type="text"
-          placeholder="Enter your name"
-          inputValue={this.inputFieldValue}
-        />
-
-        <Button
-          size={buttonSizes.LG}
-          skin={buttonSkins.PRIMARY}
-          onClick={this.props.onClick}
-        >
-          Button Exist HERE
-        </Button>
-
         <WrapperLogin />
       </div>
     );

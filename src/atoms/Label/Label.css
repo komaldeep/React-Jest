@@ -1,0 +1,8 @@
+.vertical {
+    display: block;
+    text-align: justify;
+}
+
+.horizontal {
+    display: flex;
+}

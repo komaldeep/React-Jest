@@ -1,49 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div
-  className="App"
->
+<div>
   <div
-    className="App-header"
+    className="App-header App"
   >
     <h2>
       Welcome to React
     </h2>
+    <h3>
+      Best Practise for writing react components (Atomic design)
+    </h3>
   </div>
-  <p
-    className="App-intro"
-  >
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
-  </p>
-  <div
-    className="wrap"
-  >
-    <input
-      className="input"
-      disabled={false}
-      id={undefined}
-      maxLength={9999}
-      name="input field name is"
-      onChange={[Function]}
-      placeholder="Enter your name"
-      type="text"
-      value={undefined}
-    />
-  </div>
-  <button
-    className="btn large primary"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    Button Exist HERE
-  </button>
   <div>
+    <label
+      className="vertical"
+    >
+      Username
+    </label>
+    <div
+      className="wrap"
+    >
+      <input
+        className="input"
+        disabled={false}
+        id={undefined}
+        maxLength={9999}
+        name={undefined}
+        onChange={[Function]}
+        placeholder="Enter your name"
+        type="text"
+        value={undefined}
+      />
+    </div>
     <button
       className="btn small secondary"
       disabled={false}

@@ -2,6 +2,26 @@
 
 exports[`renders without crashing 1`] = `
 <div>
+  <label
+    className="vertical"
+  >
+    Username
+  </label>
+  <div
+    className="wrap"
+  >
+    <input
+      className="input"
+      disabled={false}
+      id={undefined}
+      maxLength={9999}
+      name={undefined}
+      onChange={[Function]}
+      placeholder="Enter your name"
+      type="text"
+      value={undefined}
+    />
+  </div>
   <button
     className="btn small secondary"
     disabled={false}

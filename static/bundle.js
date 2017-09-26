@@ -22573,6 +22573,10 @@
 
 	__webpack_require__(199);
 
+	var _WrapperLogin = __webpack_require__(201);
+
+	var _WrapperLogin2 = _interopRequireDefault(_WrapperLogin);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22607,41 +22611,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'App' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'App-header' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Welcome to React'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'App-intro' },
-	          'To get started, edit ',
-	          _react2.default.createElement(
-	            'code',
-	            null,
-	            'src/App.js'
-	          ),
-	          ' and save to reload.'
-	        ),
-	        _react2.default.createElement(_InputText2.default, {
-	          name: 'input field name is',
-	          type: 'text',
-	          placeholder: 'Enter your name',
-	          inputValue: this.inputFieldValue
-	        }),
-	        _react2.default.createElement(
-	          _Button2.default,
-	          {
-	            size: _Button.buttonSizes.LG,
-	            skin: _Button.buttonSkins.PRIMARY,
-	            onClick: this.props.onClick
-	          },
-	          'Button Exist HERE'
-	        )
+	        _react2.default.createElement(_WrapperLogin2.default, null)
 	      );
 	    }
 	  }]);
@@ -22698,18 +22668,16 @@
 	  SECONDARY: 'secondary'
 	};
 
-	var Buuton = function (_Component) {
-	  _inherits(Buuton, _Component);
+	var Button = function (_Component) {
+	  _inherits(Button, _Component);
 
-	  function Buuton(props) {
-	    _classCallCheck(this, Buuton);
+	  function Button(props) {
+	    _classCallCheck(this, Button);
 
-	    var _this = _possibleConstructorReturn(this, (Buuton.__proto__ || Object.getPrototypeOf(Buuton)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
 
 	    _this.handleClick = function () {
-	      _this.setState({
-	        counter: 1
-	      });
+	      _this.props.buttonClicked();
 	    };
 
 	    _this.state = {
@@ -22718,40 +22686,53 @@
 	    return _this;
 	  }
 
-	  _createClass(Buuton, [{
+	  _createClass(Button, [{
 	    key: 'render',
 	    value: function render() {
+	      var _props = this.props,
+	          size = _props.size,
+	          skin = _props.skin,
+	          disabled = _props.disabled,
+	          type = _props.type,
+	          children = _props.children;
+
+
 	      return _react2.default.createElement(
 	        'button',
 	        {
 	          onClick: this.handleClick,
 	          className: (0, _classnames2.default)({
 	            btn: true,
-	            large: this.props.size === 'lg',
-	            small: this.props.size === 'sm'
+	            large: size === 'lg',
+	            medium: size === 'md',
+	            small: size === 'sm',
+	            extraSmall: size === 'xs',
+	            primary: skin === 'primary',
+	            secondary: skin === 'secondary'
 	          }),
-	          disabled: this.props.disabled,
-	          type: this.props.type
+	          disabled: disabled,
+	          type: type
 	        },
-	        this.props.children
+	        children
 	      );
 	    }
 	  }]);
 
-	  return Buuton;
+	  return Button;
 	}(_react.Component);
 
-	Buuton.displayName = 'atoms/Button';
-	Buuton.propTypes = {
+	Button.displayName = 'atoms/Button';
+	Button.propTypes = {
 	  size: _propTypes2.default.string,
 	  skin: _propTypes2.default.string,
 	  disabled: _propTypes2.default.bool,
 	  onClick: _propTypes2.default.func,
 	  children: _propTypes2.default.node,
 	  block: _propTypes2.default.bool,
-	  type: _propTypes2.default.oneOf(['button', 'submit'])
+	  type: _propTypes2.default.oneOf(['button', 'submit']),
+	  buttonClicked: _propTypes2.default.func
 	};
-	Buuton.defaultProps = {
+	Button.defaultProps = {
 	  skin: buttonSkins.PRIMARY,
 	  size: buttonSizes.MD,
 	  onClick: function onClick() {},
@@ -22759,7 +22740,7 @@
 	  block: false,
 	  type: 'button'
 	};
-	exports.default = Buuton;
+	exports.default = Button;
 
 /***/ }),
 /* 191 */
@@ -23124,7 +23105,7 @@
 
 
 	// module
-	exports.push([module.id, ".wrap {\n  position: relative; }\n\n.input {\n  height: 2.1rem;\n  padding: .45rem 2.5rem .4rem .8rem;\n  margin-bottom: 1.5rem;\n  margin-top: 1.5rem; }\n\n::-ms-clear {\n  display: none;\n  width: 0;\n  height: 0; }\n\n.hasDanger {\n  padding-right: .8rem; }\n\n.pending {\n  /*focus {*/\n  /*box-shadow: none;*/\n  /*}*/ }\n\n.reset {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 10;\n  width: .8rem;\n  height: 100%;\n  padding-right: 1.75rem;\n  padding-left: .75rem;\n  border: none;\n  outline: none;\n  background: transparent; }\n", ""]);
+	exports.push([module.id, ".wrap {\n  position: relative; }\n\n.input {\n  height: 2.1rem;\n  padding: .45rem 2.5rem .4rem .8rem;\n  /*margin-bottom: 1.5rem;*/\n  /*margin-top: 1.5rem;*/ }\n\n::-ms-clear {\n  display: none;\n  width: 0;\n  height: 0; }\n\n.hasDanger {\n  padding-right: .8rem; }\n\n.pending {\n  /*focus {*/\n  /*box-shadow: none;*/\n  /*}*/ }\n\n.reset {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 10;\n  width: .8rem;\n  height: 100%;\n  padding-right: 1.75rem;\n  padding-left: .75rem;\n  border: none;\n  outline: none;\n  background: transparent; }\n", ""]);
 
 	// exports
 
@@ -23169,6 +23150,226 @@
 
 	// module
 	exports.push([module.id, ".App {\n  text-align: center; }\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px; }\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white; }\n\n.App-intro {\n  font-size: large; }\n\n@keyframes App-logo-spin {\n  from {\n    transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg); } }\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(191);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _Button = __webpack_require__(190);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _InputText = __webpack_require__(196);
+
+	var _InputText2 = _interopRequireDefault(_InputText);
+
+	var _Label = __webpack_require__(202);
+
+	var _Label2 = _interopRequireDefault(_Label);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WrapperLogin = function (_Component) {
+	  _inherits(WrapperLogin, _Component);
+
+	  function WrapperLogin() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, WrapperLogin);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WrapperLogin.__proto__ || Object.getPrototypeOf(WrapperLogin)).call.apply(_ref, [this].concat(args))), _this), _this.loginButton = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(WrapperLogin, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _Label2.default,
+	          {
+	            vertical: _Label.labelOrigins.VERTICAL
+	          },
+	          'Username'
+	        ),
+	        _react2.default.createElement(_InputText2.default, {
+	          type: 'text',
+	          placeholder: 'Enter your name',
+	          inputValue: this.inputFieldValue
+	        }),
+	        _react2.default.createElement(
+	          _Button2.default,
+	          {
+	            size: _Button.buttonSizes.SM,
+	            skin: _Button.buttonSkins.SECONDARY,
+	            buttonClicked: this.loginButton
+	          },
+	          'Submit'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return WrapperLogin;
+	}(_react.Component);
+
+	WrapperLogin.displayName = 'molecule/WrapperLogin';
+	WrapperLogin.propTypes = {
+	  // notificationKey: PropTypes.oneOf(getEnumValues(loginNotifications)),
+	};
+	exports.default = WrapperLogin;
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.labelOrigins = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(191);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _classnames = __webpack_require__(193);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(203);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var labelOrigins = exports.labelOrigins = {
+	  VERTICAL: 'vertical',
+	  HORIZONTAL: 'horizontal'
+	};
+
+	var Label = function (_Component) {
+	  _inherits(Label, _Component);
+
+	  function Label() {
+	    _classCallCheck(this, Label);
+
+	    return _possibleConstructorReturn(this, (Label.__proto__ || Object.getPrototypeOf(Label)).apply(this, arguments));
+	  }
+
+	  _createClass(Label, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          vertical = _props.vertical,
+	          horizontal = _props.horizontal,
+	          children = _props.children;
+
+	      return _react2.default.createElement(
+	        'label',
+	        { className: (0, _classnames2.default)({
+	            vertical: vertical === 'vertical',
+	            horizontal: horizontal === 'horizontal'
+	          }) },
+	        children
+	      );
+	    }
+	  }]);
+
+	  return Label;
+	}(_react.Component);
+
+	Label.propTypes = {
+	  vertical: _propTypes2.default.string,
+	  horizontal: _propTypes2.default.string,
+	  children: _propTypes2.default.string
+	};
+	Label.displayName = 'atoms/Label';
+	exports.default = Label;
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(204);
+	if (typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(188)(content, {});
+	if (content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if (false) {
+		// When the styles change, update the <style> tags
+		if (!content.locals) {
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Label.css", function () {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Label.css");
+				if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function () {
+			update();
+		});
+	}
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(187)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".vertical {\n  display: block;\n  text-align: left; }\n\n.horizontal {\n  display: flex; }\n", ""]);
 
 	// exports
 
