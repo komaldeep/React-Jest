@@ -3,10 +3,10 @@
 }
 
 .input {
-  height: 2.1rem;
+  height: 3.1rem;
+  width: 30rem;
   padding: .45rem 2.5rem .4rem .8rem;
   margin-bottom: 1.5rem;
-  /*margin-top: 1.5rem;*/
 }
 
 ::-ms-clear {
@@ -16,7 +16,7 @@
 }
 
 .hasDanger {
-  padding-right: .8rem;
+  /*padding-right: .8rem;*/
 }
 
 .disabled {

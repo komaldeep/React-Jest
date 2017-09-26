@@ -32,7 +32,7 @@ export default class WrapperLogin extends Component {
         />
 
         <Button
-          size={buttonSizes.SM}
+          size={buttonSizes.LG}
           skin={buttonSkins.SECONDARY}
           buttonClicked={this.loginButton}
         >

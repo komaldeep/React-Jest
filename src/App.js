@@ -26,7 +26,7 @@ class App extends Component {
       <div>
         <div className="App-header App">
           <h2>Welcome to React</h2>
-          <h3>Best Practise for writing react components (Atomic design)</h3>
+          <h3>Best Practise for writing react components (Atomicity)</h3>
         </div>
         <WrapperLogin />
       </div>
