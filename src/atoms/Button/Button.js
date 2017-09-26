@@ -55,7 +55,8 @@ export default class Button extends Component {
     const { size,
             skin,
             disabled,
-            type
+            type,
+            children
           } = this.props;
 
     return (
@@ -75,7 +76,7 @@ export default class Button extends Component {
         disabled={disabled}
         type={type}
       >
-        { this.props.children }
+        { children }
       </button>
     );
   }
